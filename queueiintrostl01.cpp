@@ -51,3 +51,54 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+#include<iostream>     // For input-output
+#include<queue>        // For STL queue
+using namespace std;
+
+// Function to read (print) all elements of the queue
+// Queue is passed by value, so original queue is not changed
+void readQueue(queue<char> q) {
+
+    // Loop until queue becomes empty
+    while(!q.empty()) {
+        cout << q.front() << " ";  // Print front element
+        q.pop();                   // Remove front element
+    }
+    cout << endl;
+}
+
+int main() {
+
+    // Create a queue of characters
+    queue<char> q;
+
+    // Insert elements into queue
+    q.push('A');
+    q.push('B');
+    q.push('C');
+
+    cout << "Front of queue is: " << q.front() << endl;
+    // Output: Front of queue is: A
+
+    cout << "Size of queue is: " << q.size() << endl;
+    // Output: Size of queue is: 3
+
+    cout << "Queue elements are: ";
+    readQueue(q);
+    // Output: Queue elements are: A B C
+
+    // Queue remains unchanged after function call
+    cout << "Front after function call: " << q.front() << endl;
+    // Output: Front after function call: A
+
+    cout << "Size after function call: " << q.size() << endl;
+    // Output: Size after function call: 3
+
+    return 0;
+}
+
